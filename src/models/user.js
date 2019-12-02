@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  /*
   age: {
     type: Number,
     required: true,
@@ -21,6 +22,7 @@ const userSchema = new mongoose.Schema({
       }
     }
   },
+  */
   email: {
     type: String,
     required: true,
@@ -56,8 +58,8 @@ const userSchema = new mongoose.Schema({
 
 //Aqui maybe ocupamos cambiar
 
-userSchema.virtual('todos', {
-  ref: 'Todo',
+userSchema.virtual('expenses', {
+  ref: 'Expense',
   localField: '_id',
   foreignField: 'createdBy'
 })
